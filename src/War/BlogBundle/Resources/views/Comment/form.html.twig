@@ -1,0 +1,8 @@
+{# Twig template #}
+{{ form_start(form, {'action': path('WarBlogBundle_comment_create' , 
+{ 'blog_id' : comment.blog.id }), 'method': 'POST', 'attr': {'class': 'war'} }) }}
+
+{{ form_widget(form) }}
+<p>
+<input type="submit" value="Submit">
+</p>

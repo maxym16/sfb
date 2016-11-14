@@ -1,0 +1,2 @@
+Parse error: syntax error, unexpected T_STRING, expecting T_CONSTANT_ENCAPSED_STRING or '(' in /home/a7797934/public_html/web/app.php on line 2
+помилка на хостінгу 000wehost.com через те , що у них старий PHP v5.2.

@@ -1,0 +1,27 @@
+services:
+#    war_blog.example:
+#        class: War\BlogBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+    war_blog.twig.extension:
+        class: War\BlogBundle\Twig\Extensions\WarBlogExtension
+        tags:
+            - { name: twig.extension }
+#    war_blog.admin.blog:
+    war_blog.admin.blog:
+        class: War\BlogBundle\Admin\BlogAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Blog, label: Блог (Blog) }
+        arguments:
+            - ~
+            - War\BlogBundle\Entity\Blog
+#            - 'WarBlogBundle:BlogAdmin'
+            - ~
+#        arguments: [null, Acme\GaudeamusBundle\Entity\Article, SonataAdminBundle:CRUD]
+    war_blog.admin.comment:
+        class: War\BlogBundle\Admin\CommentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Blog", label: "Коментарі (Comments)" }
+        arguments:
+            - ~
+            - War\BlogBundle\Entity\Comment
+            - 'WarBlogBundle:CommentAdmin'

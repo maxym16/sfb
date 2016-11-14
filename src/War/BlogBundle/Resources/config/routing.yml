@@ -1,0 +1,34 @@
+# src/War/BlogBundle/Resources/config/routing.yml
+WarBlogBundle_homepage:
+    path: /
+    defaults: { _controller: WarBlogBundle:Page:index }
+    #require:
+    methods: [ GET ]
+WarBlogBundle_about:
+    path: /about
+    defaults: { _controller: WarBlogBundle:Page:about }    
+    methods: [ GET ]
+WarBlogBundle_contact:
+    path: /contact
+    defaults: { _controller: WarBlogBundle:Page:contact }
+    methods: [ GET|POST ]
+#    methods:  ['GET','POST']
+#WarBlogBundle_blog_show:
+#    path: /{id}
+#    defaults: { _controller: WarBlogBundle:Blog:show }
+#    methods: [ GET ]
+#    requirements:
+#        id: \d+
+WarBlogBundle_comment_create:
+    path: /comment/{blog_id}
+    defaults: { _controller: "WarBlogBundle:Comment:create" }
+    methods: [ POST ]
+    requirements:
+        blog_id: \d+
+WarBlogBundle_blog_show:
+    path: /{id}/{slug}
+    defaults: { _controller: "WarBlogBundle:Blog:show", comments: true }
+    methods: [ GET ]
+    requirements:
+        id: \d+
+    

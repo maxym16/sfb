@@ -1,0 +1,21 @@
+{# empty Twig template #}
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field %}
+    <div>
+        <strong>{{ object.image }}</strong> <br />
+        <img src="{{ asset(['images/', object.image]|join) }}" 
+             alt="{{ object.title }} image not found" 
+             width="110px" />
+        <strong>{#{ asset(['images/',object.image]|join) }#}</strong> <br />
+    </div>
+{% endblock %}
+{#% block field %}
+<div>
+    {% if object.picture != null %}
+    <img src="{{ object.picture.path }}">
+    {% else %}
+    <span>No picture</span>
+    {% endif %}
+</div>
+{% endblock %#}

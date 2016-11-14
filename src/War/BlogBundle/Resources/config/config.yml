@@ -1,0 +1,10 @@
+## YAML Template.
+parameters:
+# War contact email address
+#    war_blog.emails.contact_email: contact@email.com
+    war_blog.emails.contact_email: goolyamaxym@gmail.com
+    war_blog.comments.latest_comment_limit: 10
+#    web_path: %kernel.root_dir%/../web/
+#twig:
+#    globals:
+#        web_path: %web_path%

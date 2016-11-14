@@ -1,0 +1,20 @@
+{# src/War/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+{{ parent() }}
+{#% stylesheets '@WarBlogBundle/Resources/public/css/*' output='css/war.css' filter='?yui_css' %}
+<link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+{% endstylesheets %#}
+{% stylesheets 'src/War/BlogBundle/Resources/public/css/*' filter='?uglifycss' filter='cssrewrite' %}
+<link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+<link href="{{ asset('bundles/warblog/css/blog.css') }}" type="text/css" rel="stylesheet" />
+<link href="{{ asset('bundles/warblog/css/sidebar.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block sidebar %}
+{{ render(controller('WarBlogBundle:Page:sidebar' ))}}
+{% endblock %}
+

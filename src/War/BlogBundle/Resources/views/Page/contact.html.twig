@@ -1,0 +1,30 @@
+{% extends 'WarBlogBundle::layout.html.twig' %}
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+<header>
+<h1>Contact Warblog</h1>
+</header>
+
+{% for flashMessage in app.session.flashbag.get('war-notice') %}
+<div class="war-notice">
+{{ flashMessage }}
+</div>
+{% endfor %}
+
+<p>Want to contact Warblog?</p>
+<form action="{{ path('WarBlogBundle_contact') }}" method="post">
+{{ form_start(form,{'attr':{'class':'war'} }) }}
+{{ form_errors(form) }}
+
+{{ form_row(form.name) }}
+{{ form_row(form.email) }}
+{{ form_row(form.subject) }}
+{{ form_row(form.body) }}
+
+{{ form_rest(form) }}
+
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}
