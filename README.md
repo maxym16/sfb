@@ -5,7 +5,10 @@ This is WarBlog - separate Bundle.
 Symfony Standard Edition
 
 SonataAdminBundle
+
 FOSUserBundle
-Gedmo/Doctrine and Behat/Transliterator
+
+Gedmo/Doctrine and Behat/Transliterator,
 Gedmo Doctrine Translatable
+
 nodejs,npm,uglifyjs,uglifycss
